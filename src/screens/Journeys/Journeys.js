@@ -1,6 +1,6 @@
 import React from 'react';
-import {SafeAreaView, FlatList, ActivityIndicator} from 'react-native';
-import {COLORS} from '../../constants';
+import {SafeAreaView, FlatList, Text, View} from 'react-native';
+import {FONTS} from '../../constants';
 import commonStyles from '../commonStyles';
 import {useSelector} from 'react-redux';
 import {HeaderBar, JourneyComponent} from '../../components';
@@ -33,16 +33,14 @@ const Journeys = ({navigation}) => {
       />
       <FlatList
         style={commonStyles.marginV15}
-        data={journeysList}
+        data={[]}
         showsVerticalScrollIndicator={false}
         renderItem={renderListItem}
         keyExtractor={item => item.id}
         ListEmptyComponent={() => (
-          <ActivityIndicator
-            animating={showLoader}
-            size="large"
-            color={COLORS.blue}
-          />
+          <View style={commonStyles.flexCenter}>
+            <Text style={{...FONTS.h3}}>No Data Found</Text>
+          </View>
         )}
       />
     </SafeAreaView>
