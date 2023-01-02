@@ -33,7 +33,7 @@ const Journeys = ({navigation}) => {
       />
       <FlatList
         style={commonStyles.marginV15}
-        data={[]}
+        data={journeysList}
         showsVerticalScrollIndicator={false}
         renderItem={renderListItem}
         keyExtractor={item => item.id}
