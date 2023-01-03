@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, SafeAreaView, TextInput} from 'react-native';
+import {View, Text, SafeAreaView, TextInput, Keyboard} from 'react-native';
 import styles from './AddJourneyStyles';
 import commonStyles from '../commonStyles';
 import {COLORS, FONTS} from '../../constants';
@@ -35,6 +35,7 @@ const AddJourney = ({navigation}) => {
   ];
 
   const onClickSubmit = async () => {
+    Keyboard.dismiss()
     if (fromPlace === '') {
       alert('Please enter From place');
     } else if (toplace === '') {
